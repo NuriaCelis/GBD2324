@@ -1,9 +1,10 @@
-# GESTIÓN DE BASES DE DATOS. IES MIGUEL HERRERO.
+# GESTIÓN DE BASES DE DATOS.
 
 Gestión de Bases de Datos.
 
 CFGS de Administración de Sistemas Informáticos en Red.
 
+IES Miguel Herrero.
 
 
 ## Indice 🚀
