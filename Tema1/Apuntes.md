@@ -92,7 +92,6 @@ Como ya hemos comentado, en este curso vamos a trabajar con las bases de datos r
 
 ### 3.1.- Conceptos
 
-
 **Datos:** son hechos conocidos que pueden registrarse y que tienen un significado implícito. Pueden constituir datos los nombres, números telefónicos y direcciones de personas que conocemos.
 
 **Tipo de Dato:** El tipo de dato indica la naturaleza del campo. Así, se puede tener datos numéricos, que son aquellos con los que se pueden realizar cálculos aritméticos (sumas, restas, multiplicaciones…), los datos alfanuméricos, que son los que contienen caracteres alfabéticos y números…
@@ -101,21 +100,11 @@ Como ya hemos comentado, en este curso vamos a trabajar con las bases de datos r
 
 **Campo:** Cada una de las columnas de una tabla. Identifica una familia de datos. Por ejemplo, el campo fechaNacimiento representa las fechas de nacimiento de todos los clientes que contiene una tabla CLIENTES.
 
+**Campo clave:** Es un campo especial que identifica de forma única a cada registro. Por ejemplo, el NIF es único para cada persona, por tanto puede ser su campo clave. Existen distivos tipos de campos clave que veremos más adelante.
+
 **Registro:** Corresponde a cada una de las filas de la tabla. También se llaman tuplas. Por ejemplo en la siguiente tabla CLIENTES, observamos dos registros, que corresponden a la información sobre los clientes Juan García y Fernándo Martínez.
 
 ![Tabla](img/Tabla.png)
-
-**Campo clave:** Es un campo especial que identifica de forma única a cada registro. Por ejemplo, el NIF es único para cada persona, por tanto puede ser su campo clave. Existen distivos tipos de campos clave que veremos más adelante.
-
-**Consulta:** Es una instrucción para hacer peticiones a una base de datos. Las consultas, o querys, pueden ser solo para mostrar información contenida en una o varias tablas de la base de datos, o para modificar, eliminar o añadir datos a una o varias tablas de la base de datos.
-   
-**Índice:** Es una estructura que almacena los campos clave de una tabla, organizándolos para hacer más fácil encontrar y ordenar los registros.
-   
-**Vista:** Se obtienen al guardar una consulta de una o varias tablas. De esta forma se obtiene una tabla virtual, es decir, no está almacenada en los dispositivos de almacenamiento del ordenador, aunque sí se almacena su definición.
-
-**Guiones o scripts:** Son un conjunto de instrucciones, que ejecutadas de forma ordenada, realizan operaciones avanzadas o mantenimiento de los datos almacenados en la BD.
-    
-**Procedimientos:** Son un tipo especial de script que están almacenados en la BD y forman parte de su esquema.
 
 ### 3.2.- Otros conceptos más específicos de las bases de datos
 
