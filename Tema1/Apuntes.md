@@ -138,10 +138,10 @@ Un sistema gestor de bases de datos (SGBD) es una aplicación que permite a los 
 
 En general, un SGBD proporciona los siguientes servicios:
 
-- Permite la definición de la base de datos mediante el lenguaje de definición de datos **(DDL – Data Description Language)**. Este lenguaje permite especificar la estructura y el tipo de los datos, así como las restricciones sobre los datos. Todo esto se almacenará en la base de datos.
-- Permite la inserción, actualización, eliminación y consulta de datos mediante el lenguaje de manejo o manipulación de datos **(DML - Data Manipulation Language)**.
-- Proporciona un acceso controlado a la base de datos mediante:
-    - Un sistema de seguridad, de modo que los usuarios no autorizados no puedan acceder a la base de datos, mediante el lenguaje de control de datos **(DCL - Data Control Language)**.
+- **(DDL – Data Description Language)**: Permite la definición de la base de datos mediante el lenguaje de definición de datos. Este lenguaje permite especificar la estructura y el tipo de los datos, así como las restricciones sobre los datos. Todo esto se almacenará en la base de datos.
+- **(DML - Data Manipulation Language)**: Permite la inserción, actualización, eliminación y consulta de datos mediante el lenguaje de manejo o manipulación de datos.
+- **(DCL - Data Control Language)**: Proporciona un acceso controlado a la base de datos mediante:
+    - Un sistema de seguridad, de modo que los usuarios no autorizados no puedan acceder a la base de datos, mediante el lenguaje de control de datos.
     - Un sistema de integridad que mantiene la integridad y la consistencia de los datos;
     - Un sistema de control de concurrencia que permite el acceso compartido a la base de datos;
     - Un sistema de control de recuperación que restablece la base de datos después de que se produzca un fallo del hardware o del software;
@@ -153,8 +153,8 @@ La principal herramienta de un SGBD es la interfaz de programación con el usuar
 
 Los SGBD se pueden clasificar según las BD que gestionan (jerárquicas, relacionales, orientadas a objetos,…), pero como actualmente la mayoría de los SGBD integran múltiples filosofías, los clasificaremos según su capacidad y potencia del propio gestor, resultado los siguientes SGBD:
 
-- SGBD ofimáticos: manipulas BD pequeñas orientadas a almacenar datos domésticos o de pequeñas empresas. Ejemplos típicos son Microsoft ACCESS y LibreOffice Base.
-- SGBD corporativos: tienen la capacidad de gestionar BD enormes, de medianas o grandes empresas con una carga de datos y transacciones que requieren de un servidor de gran capacidad. Un ejemplo típico de BD corporativas es ORACLE, actualmente junto de DB2 el servidor de BD más potente del mercado (también el más caro). Nosotros para nuestro aprendizaje utilizamos una versión gratuita con fines educativos, que aunque bastante limitada, nos sirve para introducirnos en la filosofía de ORACLE.
+- _SGBD ofimáticos_: manipulas BD pequeñas orientadas a almacenar datos domésticos o de pequeñas empresas. Ejemplos típicos son Microsoft ACCESS y LibreOffice Base.
+- _SGBD corporativos_: tienen la capacidad de gestionar BD enormes, de medianas o grandes empresas con una carga de datos y transacciones que requieren de un servidor de gran capacidad. Un ejemplo típico de BD corporativas es ORACLE, actualmente junto de DB2 el servidor de BD más potente del mercado (también el más caro). Nosotros para nuestro aprendizaje utilizamos una versión gratuita con fines educativos, que aunque bastante limitada, nos sirve para introducirnos en la filosofía de ORACLE.
 
 ## HOJAS DE EJERCICIOS
 
