@@ -20,15 +20,25 @@ Los ficheros son estructuras de información que crean los sistemas operativos d
 
 ### 1.1.- Tipos de ficheros y formatos
 
-El formato y tipo de fichero determina la forma de interpretar la información que contiene. Un fichero es una ritra de bits (ceros y unos), de forma que es necesaria su interpretación para dar sentido a la información que almacena. 
+El formato y tipo de fichero determina la forma de interpretar la información que contiene. Un fichero es una ristra de bits (ceros y unos), de forma que es necesaria su interpretación para dar sentido a la información que almacena. 
 
 Tradicionalmente, los ficheros se han clasificado de muchas formas. Vemos una clasificación de los ficheros en función de varias categorías.
 
-1. **Según el contenido:** un fichero puede ser tratado como _texto_, o como datos _binarios_, es decir, los bits almacenados en un fichero pueden ser traducidos por el sistema operativo a caracters alfabéticos y números que entiene el ser humano, o ser tratados como componentes de estructuras de datos más complejas, como ficheros que almacenan sonido, video, imágenes, etc...
+1. **Según el contenido:** 
+   - _Ficheros de texto_: el contenido del fichero lo traduce el sistema operativo a caracteres alfabéticos y números que entiende el ser humano.
+   - _Ficheros binarios_: el contenido del fichero no se traduce directamente. Son una serie de bits que almacenan sonido, video, imágenes, etc...
 
-2. **Según la organización:** dicta la forma en que se han de acceder a los datos. Los ficheros con _organización secuencial_, estan dispuestos siguiendo una secuencia ordenada, es decir, los datos estan unos detrás de otros. para acceder a un dato concreto, se han de recorrer todos los datos anteriores. Los ficheros de _organización directa_, permiten acceder a un dato en concreto sin necesidad de acceder a los anteriores. Finalmente, los de _organización indexada_ acceden a los datos consultando un índice, es decir, una estructura de datos que permite acceder a la información rápidamente, simulando la forma en que el índice de un libro facilitaq el acceso a los contenidos. Existen variantes de las anteriores que mezclan las mejores características de cada una de ellas.
+2. **Según la organización:** Dicta la forma en la que se acceden los datos.
+   - _Ficheros con organización secuencial_: Los datos estan dispuestos siguiendo una secuencia ordenada, es decir, los datos estan unos detrás de otros. Para acceder a un dato concreto, se han de recorrer todos los datos anteriores. 
+   - _Ficheros de organización directa_: permiten acceder a un dato en concreto sin necesidad de acceder a los anteriores. 
+   - _Ficheros de organización indexada_: acceden a los datos consultando un índice, es decir, una estructura de datos que permite acceder a la información rápidamente, simulando la forma en que el índice de un libro facilitaq el acceso a los contenidos. 
 
-3. **Según la utilidad:** indica el uso que se va a hacer de el fichero. Si va a contener datos fundamentales para la organización, se denomina _fichero maestro_. Si hay variaciones en los ficheros maestros, se almacenan en los _ficheros de movimientos_. Y cuando se almacenan datos que ya no son necesario para su proceso diario forman parte de los _ficheros históricos_.
+Existen variantes de las anteriores que mezclan las mejores características de cada una de ellas.
+
+3. **Según la utilidad:** indica el uso que se va a hacer de el fichero. 
+   - _Ficheros maestros_: Si va a contener datos fundamentales para la organización. Por ejemplo, un fichero con los datos de los alumnos de un instituto.
+   - _Ficheros de movimientos_: Se almacenan las variaciones de los ficheros maestros.
+   - _Ficheros históricos_: Almacenan los datos que ya no son necesarios para su proceso diario.
 
 ![Clasificación de ficheros](img/Ficheros.png)
 
@@ -48,10 +58,10 @@ Una **Base de datos**  es un conjunto de datos estructurados que pertenecen a un
 
 Anteriormente a las bases de datos, se utilizaban ficheros tradicionales, como los que hemos visto en el apartado anterior. Veamos según su definición cuales son sus diferencias.
 
-- Los Ficheros tradicionales almacenan los datos en archivos individuales, exclusivos de cada aplicación en particular. Los datos de un fichero no están relacionados con datos de otros ficheros. Son unidades independientes. En este sistema, los datos pueden ser redundantes y la actualización de los datos es más lenta.
-- Las Bases de datos tienen el almacenamiento de datos formalmente definido, controlado centralmente para intentar servir a múltiples y diferentes aplicaciones. La base de datos es una fuente de datos que son compartidos por numerosos usuarios para diversas aplicaciones.
+- Los _ficheros tradicionales_ almacenan los datos en archivos individuales, exclusivos de cada aplicación en particular. Los datos de un fichero no están relacionados con datos de otros ficheros. Son unidades independientes. En este sistema, los datos pueden ser redundantes y la actualización de los datos es más lenta.
+- Las _bases de datos_ tienen el almacenamiento de datos formalmente definido, controlado centralmente para intentar servir a múltiples y diferentes aplicaciones. La base de datos es una fuente de datos que son compartidos por numerosos usuarios para diversas aplicaciones.
 
-Así, en un Sistema de ficheros tradicional, la información está dispersa en varios ficheros de datos y existe un cierto número de programas que los recuperan y agrupan. Aunque los sistemas de ficheros o archivos supusieron un gran avance sobre los sistemas manuales, tienen inconvenientes bastante importantes que se solventaron, en gran medida, con la aparición de los sistemas de bases de datos.
+Así, en un sistema de ficheros tradicional, la información está dispersa en varios ficheros de datos y existe un cierto número de programas que los recuperan y agrupan. Aunque los sistemas de ficheros o archivos supusieron un gran avance sobre los sistemas manuales, tienen inconvenientes bastante importantes que se solventaron, en gran medida, con la aparición de los sistemas de bases de datos.
 
 ### 2.1.- Tipos de bases de datos
 
