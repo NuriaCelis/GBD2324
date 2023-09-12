@@ -115,7 +115,6 @@ Como ya hemos comentado, en este curso vamos a trabajar con las bases de datos r
 **Claves primarias y claves foráneas o ajenas. Relaciones:** Cada entidad tiene una clave primaria o campo clave o llave que identifica unívocamente al conjunto de datos. Cuando en una entidad figura la clave primaria de otra entidad, ésta se denomina clave foránea o clave ajena. Las entidades se relacionan entre sí a través de las claves foráneas.
 
 ![Relacion](img/Relacion.png)
-![Tabla](img/Relacion.png)
 
 - En este gráfico tenemos dos entidades: Clientes y Vehículos. 
 - La clave primaria de Clientes es: CodCliente
