@@ -1,0 +1,11 @@
+plugins:
+  - jekyll-relative-links
+  - jekyll-remote-theme
+  - jemoji
+relative_links:
+  enabled: true
+
+remote_theme: pages-themes/modernist@v0.2.0
+
+github:
+    is_project_page: false
