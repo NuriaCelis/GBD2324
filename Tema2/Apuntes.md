@@ -639,6 +639,7 @@ Os dejo un documento resumen de como hacer el paso del modelo E-R al modelo Rela
 
 [Resumen](ConversionER-Relacional.pdf)
 
+CAMBIO
 
 **Realiza el siguiente ejercicio:**
 
