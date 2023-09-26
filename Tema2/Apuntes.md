@@ -639,8 +639,6 @@ Os dejo un documento resumen de como hacer el paso del modelo E-R al modelo Rela
 
 [Resumen](ConversionER-Relacional.pdf)
 
-CAMBIO
-
 **Realiza el siguiente ejercicio:**
 
 1. Representa el esquema relacional correspondiente a una base de datos sobre la red de albergues del Camino de Santiago del Norte. 
