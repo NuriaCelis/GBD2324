@@ -161,6 +161,8 @@ Representación de los atributos:
 
 **Observa y analiza el siguiente ejemplo:**
 
+Indica para cada atributo de que tipo es, haciendo un examen lo más exhaustivo posible.
+
 ![Atributos](img/atributo6.png)
 
 **Realiza el siguiente ejercicio:**
