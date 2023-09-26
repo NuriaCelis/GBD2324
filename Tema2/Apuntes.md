@@ -637,7 +637,7 @@ Vamos a ver detalladamente los pasos que hay que dar para transformar el modelo 
 
 Os dejo un documento resumen de como hacer el paso del modelo E-R al modelo Relacional.
 
-![Resumen](ConversionER-Relacional.pdf)
+[Resumen](ConversionER-Relacional.pdf)
 
 
 **Realiza el siguiente ejercicio:**
