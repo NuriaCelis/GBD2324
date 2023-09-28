@@ -16,8 +16,9 @@
     - [2.6.- Debilidad](#26--debilidad)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-1)
   - [3.- EL MODELO E/R AMPLIADO](#3--el-modelo-er-ampliado)
-  - [4.- CONSTRUCCIÓN DE UN DIAGRAMA E/R](#4--construcción-de-un-diagrama-er)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-2)
+  - [4.- CONSTRUCCIÓN DE UN DIAGRAMA E/R](#4--construcción-de-un-diagrama-er)
+  - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-3)
   - [5.- MODELO RELACIONAL](#5--modelo-relacional)
     - [5.1.- Elementos de una relación](#51--elementos-de-una-relación)
     - [5.2.- Restricciones del modelo relacional](#52--restricciones-del-modelo-relacional)
@@ -25,12 +26,12 @@
     - [5.4.- Integridad referencial](#54--integridad-referencial)
     - [5.5.- Representación del modelo Relacional](#55--representación-del-modelo-relacional)
     - [5.6.- Paso del modelo E/R al modelo Relacional](#56--paso-del-modelo-er-al-modelo-relacional)
-  - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-3)
+  - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-4)
   - [6.- NORMALIZACIÓN](#6--normalización)
     - [6.1.- Primera forma normal (1FN)](#61--primera-forma-normal-1fn)
     - [6.2.- Segunda forma normal (2FN)](#62--segunda-forma-normal-2fn)
     - [6.3.- Tercera forma normal (3FN)](#63--tercera-forma-normal-3fn)
-  - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-4)
+  - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-5)
 
 
 ## 1.- MODELO DE DATOS
@@ -261,7 +262,7 @@ Representación de cardinalidad y tipo de correspondencia
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 1.
+💻 Hoja de ejercicios 1. Los ejercicios del 1 al 5.
 
 Vamos a ver ahora que tipos de correspondencia nos podemos encontrar en una relación ternaria y como se puede obtener.
 
@@ -398,6 +399,10 @@ Las cardinalidades de la especialización para los cuatro casos que hemos visto 
 
 ![ERAmpliado](img/ampliado6.png)
 
+## HOJAS DE EJERCICIOS
+
+💻 Hoja de ejercicios 1. Ejercicios del 6 al 8.
+
 ## 4.- CONSTRUCCIÓN DE UN DIAGRAMA E/R
 
 Los pasos a seguir serán:
@@ -426,6 +431,9 @@ Los pasos a seguir serán:
 💻 Hoja de ejercicios 6.
 
 💻 Hoja de ejercicios 7.
+
+💻 Hoja de ejercicios 7bis.
+
 
 ## 5.- MODELO RELACIONAL
 
@@ -666,6 +674,8 @@ Os dejo un documento resumen de como hacer el paso del modelo E-R al modelo Rela
 💻 Hoja de ejercicios 13.
 
 💻 Hoja de ejercicios 14.
+
+💻 Hoja de ejercicios 14bis.
 
 ## 6.- NORMALIZACIÓN
 
