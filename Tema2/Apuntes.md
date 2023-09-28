@@ -1,6 +1,7 @@
 # UNIDAD 2. DISEÑO LÓGICO DE LA BASE DE DATOS.
 
 # INDICE
+
 - [UNIDAD 2. DISEÑO LÓGICO DE LA BASE DE DATOS.](#unidad-2-diseño-lógico-de-la-base-de-datos)
 - [INDICE](#indice)
   - [1.- MODELO DE DATOS](#1--modelo-de-datos)
@@ -32,6 +33,7 @@
     - [6.2.- Segunda forma normal (2FN)](#62--segunda-forma-normal-2fn)
     - [6.3.- Tercera forma normal (3FN)](#63--tercera-forma-normal-3fn)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-5)
+
 
 
 ## 1.- MODELO DE DATOS
