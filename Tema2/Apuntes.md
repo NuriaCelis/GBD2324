@@ -530,8 +530,8 @@ Al modificar el contenido de una CITY, se comprueba que el nuevo valor cargado e
 
   - **Borrado en cascada**: Si se elimina un país, se eliminan todas las ciudades del país. **BC**
   - **Borrado restringido**: Si se trata de eliminar un país y hay ciudades de ese país en la tabla CITY, no se permite la eliminación. **BR**
-    - **Borrado con puesta a nulos**: Si se trata de eliminar un país y hay ciudades de ese país en la tabla CITY, se elimina el país y en la columna clave ajena (countrycode) de CITY de todas las ciudades de ese país, se carga NULL. **BN**
-    - **Borrado con puesta a valor por defecto**: Si se trata de eliminar un país y hay ciudades de ese país en la tabla CITY, se elimina el país y en la columna clave ajena (countrycode) de CITY de todas las ciudades de ese país, se carga un valor por defecto. **BD**
+  - **Borrado con puesta a nulos**: Si se trata de eliminar un país y hay ciudades de ese país en la tabla CITY, se elimina el país y en la columna clave ajena (countrycode) de CITY de todas las ciudades de ese país, se carga NULL. **BN**
+  - **Borrado con puesta a valor por defecto**: Si se trata de eliminar un país y hay ciudades de ese país en la tabla CITY, se elimina el país y en la columna clave ajena (countrycode) de CITY de todas las ciudades de ese país, se carga un valor por defecto. **BD**
 
 
 - Se modifica la clave primaria en la tabla principal. Al igual que en el caso anterior, también se pueden definir diferentes restricciones de integridad referencial.
