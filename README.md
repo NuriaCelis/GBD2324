@@ -17,11 +17,11 @@ IES Miguel Herrero.
   
   [Apuntes de la Unidad 2.](Tema2/Apuntes.md)
 
-<!-- **3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
+**3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
   
   [Apuntes de la Unidad 3.](Tema3/Apuntes.md)
 
-**4. UNIDAD 4. REALIZACIÓN DE CONSULTAS.**
+<!-- **4. UNIDAD 4. REALIZACIÓN DE CONSULTAS.**
   
   [Apuntes de la Unidad 4.](Tema4/Apuntes.md)
 
