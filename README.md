@@ -1,6 +1,6 @@
 # GESTIÓN DE BASES DE DATOS.
 
-Gestión de Bases de Datos. :dragon:
+Gestión de Bases de Datos. 🐉
 
 CFGS de Administración de Sistemas Informáticos en Red.
 
