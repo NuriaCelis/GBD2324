@@ -17,7 +17,7 @@ IES Miguel Herrero.
   
   [Apuntes de la Unidad 2.](Tema2/Apuntes.md)
 
-:iphone: :calling: **3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
+:iphone: **3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
   
   [Apuntes de la Unidad 3.](Tema3/Apuntes.md)
 
