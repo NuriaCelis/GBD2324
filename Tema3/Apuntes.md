@@ -97,7 +97,7 @@ Cuando nos dan la sintaxis completa de una instrucción SQL, por ejemplo, en la 
 ```sql
 CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
+Create_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name
 ```
 
 Esto tenemos que saber interpretarlo para construir correctamente las instrucciones. Hay que tener en cuenta:
