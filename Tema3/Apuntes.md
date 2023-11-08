@@ -137,9 +137,9 @@ Las principales instrucciones del lenguaje DDL son las siguientes:
 La sintaxis de la instrucción para **crear una base de datos** es la siguiente:
 
 ```sql
-CREATE {DATABASE \| SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
+Create_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name
 ```
 
 En MySql es lo mismo usar DATABASE o SCHEMA.
@@ -172,14 +172,14 @@ La instrucción para **mostrar las bases de datos** montadas en el servidor es l
 La sintáxis de la instrucción para **modificar una base de datos** es la siguiente:
 
 ```sql
-    ALTER {DATABASE \| SCHEMA} [db_name] alter_specification;
-    alter_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name 
+    ALTER {DATABASE | SCHEMA} [db_name] alter_specification;
+    alter_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name 
 ```
 
  La síntáxis de la instrucción para **eliminar una base de datos** es la siguiente:
 
 ```sql
-     DROP {DATABASE \| SCHEMA} [IF EXISTS] db_name;
+     DROP {DATABASE | SCHEMA} [IF EXISTS] db_name;
 ```
 
  Para que podamos ejecutar instrucciones sobre una base de datos existente, es necesario tenerla en uso o abrirla:
