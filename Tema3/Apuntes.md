@@ -178,16 +178,11 @@ La instrucción para **mostrar las bases de datos** montadas en el servidor es l
 La sintáxis de la instrucción para **modificar una base de datos** es la siguiente:
 
 ```sql
-<<<<<<< HEAD
     ALTER {DATABASE \| SCHEMA} [db_name] alter_specification;
     
     alter_specification: 
     
     [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name 
-=======
-    ALTER {DATABASE | SCHEMA} [db_name] alter_specification;
-    alter_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name 
->>>>>>> 0d2be071b86e72ae99da2c936db86fe16f0196fc
 ```
 
  La síntáxis de la instrucción para **eliminar una base de datos** es la siguiente:
