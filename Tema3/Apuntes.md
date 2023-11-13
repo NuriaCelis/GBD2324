@@ -97,13 +97,9 @@ Cuando nos dan la sintaxis completa de una instrucción SQL, por ejemplo, en la 
 ```sql
 CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-<<<<<<< HEAD
 Create_specification: 
 
 [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
-=======
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name
->>>>>>> 0d2be071b86e72ae99da2c936db86fe16f0196fc
 ```
 
 Esto tenemos que saber interpretarlo para construir correctamente las instrucciones. Hay que tener en cuenta:
@@ -139,13 +135,9 @@ La sintaxis de la instrucción para **crear una base de datos** es la siguiente:
 ```sql
 CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-<<<<<<< HEAD
 Create_specification: 
 
 [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
-=======
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name | [DEFAULT] COLLATE [=] collation_name
->>>>>>> 0d2be071b86e72ae99da2c936db86fe16f0196fc
 ```
 
 En MySql es lo mismo usar DATABASE o SCHEMA.
