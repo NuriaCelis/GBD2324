@@ -97,7 +97,9 @@ Cuando nos dan la sintaxis completa de una instrucción SQL, por ejemplo, en la 
 ```sql
 CREATE {DATABASE \| SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
+Create_specification: 
+
+[DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
 ```
 
 Esto tenemos que saber interpretarlo para construir correctamente las instrucciones. Hay que tener en cuenta:
@@ -122,16 +124,10 @@ En función del tipo de operaciones realizadas, el conjunto de instrucciones SQL
 
 Las principales instrucciones del lenguaje DDL son las siguientes:
 
-- CREATE DATABASE
-- CREATE TABLE
-- CREATE INDEX
-- CREATE VIEW
-- CREATE PROCEDURE
-- CREATE FUNCTION
-- CREATE TRIGGER
-- ALTER (DATABASE, TABLE, VIEW, …)
-- DROP (DATABASE, TABLE, VIEW, ….)
-
+- CREATE (DATABASE, TABLE, INDEX, VIEW, PROCEDURE, FUNCTION, TRIGGER,...)
+- ALTER (DATABASE, TABLE, VIEW, PROCEDURE, FUNCTION, TRIGGER,...)
+- DROP (DATABASE, TABLE, VIEW, PROCEDURE, FUNCTION, TRIGGER,...)
+  
 # 4.- CREACIÓN, MODIFICACIÓN Y ELIMINACIÓN DE BASES DE DATOS
 
 La sintaxis de la instrucción para **crear una base de datos** es la siguiente:
@@ -139,7 +135,9 @@ La sintaxis de la instrucción para **crear una base de datos** es la siguiente:
 ```sql
 CREATE {DATABASE \| SCHEMA} [IF NOT EXISTS] db_name [create_specification]  
 
-Create_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
+Create_specification: 
+
+[DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name
 ```
 
 En MySql es lo mismo usar DATABASE o SCHEMA.
@@ -173,7 +171,10 @@ La sintáxis de la instrucción para **modificar una base de datos** es la sigui
 
 ```sql
     ALTER {DATABASE \| SCHEMA} [db_name] alter_specification;
-    alter_specification: [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name 
+    
+    alter_specification: 
+    
+    [DEFAULT] CHARACTER SET [=] charset_name \| [DEFAULT] COLLATE [=] collation_name 
 ```
 
  La síntáxis de la instrucción para **eliminar una base de datos** es la siguiente:
