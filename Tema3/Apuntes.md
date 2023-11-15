@@ -453,13 +453,12 @@ Interpretación de la sintaxis:
 ```sql
 CREATE TABLE Pedidos(
 
-    idPedidos              INT IDENTITY(1,1),
+    idPedidos              INT,
     producto               VARCHAR(255),
     descripcionProducto    VARCHAR(255),
     precio                 FLOAT,
     fechaPedido            DATE,
     numeroProductos        INT DEFAULT(0),
-    totalPrecio            AS precio * numeroProductos,
     idClientes INT,
 
     CONSTRAINT pk_pedidos_idPedidos PRIMARY KEY(idPedidos),
@@ -468,6 +467,8 @@ CREATE TABLE Pedidos(
 
 );
 ```
+
+En este ejemplo estamos creando una tabla con 7 campos, tiene como clave primaria idPedidos, tiene como clave alternativa producto y como clave ajena tiene el idClientes.
 
 **Realiza el siguiente ejercicio:**
 
