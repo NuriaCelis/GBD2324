@@ -448,6 +448,28 @@ Interpretación de la sintaxis:
 - ON DELETE CASCADE : Es peligroso usarlo porque puede eliminarnos mucha información. Si se elimina una fila en la tabla referenciada, se eliminan todas las filas relacionadas en la tabla hija. Por ejemplo, si en la tabla paises se elimina la fila de España, se eliminarían en la tabla ciudades todas las ciudades de España.
 - ON DELETE SET NUL : Si se elimina una fila en la tabla referenciada, se pone a nulo el valor de la clave ajena de todas las filas relacionadas en la tabla hija. Por ejemplo, si en la tabla paises se elimina la fila de España, se establecerá que el país de todas las ciudades que pertenecían a España es NULL.
 
+**Ejemplo**
+
+```sql
+CREATE TABLE Pedidos(
+
+    idPedidos              INT,
+    producto               VARCHAR(255),
+    descripcionProducto    VARCHAR(255),
+    precio                 FLOAT,
+    fechaPedido            DATE,
+    numeroProductos        INT DEFAULT(0),
+    idClientes INT,
+
+    CONSTRAINT pk_pedidos_idPedidos PRIMARY KEY(idPedidos),
+    CONSTRAINT uq_pedidos_producto UNIQUE (producto),
+    CONSTRAINT fk_clientes_pedidos FOREIGN KEY (idClientes) REFERENCES Clientes(idClientes)
+
+);
+```
+
+En este ejemplo estamos creando una tabla con 7 campos, tiene como clave primaria idPedidos, tiene como clave alternativa producto y como clave ajena tiene el idClientes.
+
 **Realiza el siguiente ejercicio:**
 
 7. Crear una tabla familiasprof que almacenará las familias profesionales de FP. La tabla tiene una columna código de la familia que se representa con tres letras y un nombre de la familia profesional. Esas columnas no admiten nulos.
@@ -505,10 +527,10 @@ Si se establecen varias opciones, éstas se separan simplemente con espacio.
 Opciones o propiedades de tabla II:
 
 - ENGINE = {BDB\|HEAP\|ISAM\|InnoDB\|MERGE UNION=\|MRG_MYISAM\|MYISAM } Sirve para indicar el motor de almacenamiento de la tabla. Si no se indica será de tipo InnoDB.
-- Tablas InnoDB: Son tablas de transacción segura, es decir, sobre ellas se pueden usar las sentencias COMMIT o ROLLBACK para confirmar o anular un proceso de transacción que se ha iniciado anteriormente. Admiten control de integridad referencial.
-- Tablas MyISAM: Son tablas que usan pocos recursos para el almacenamiento. Los procesos son más rápidos. No admiten  transacciones seguras ni integridad referencial.
-- Tablas MERGE: Son tablas que se definen como resultado de una unión entre dos tablas que tienen las mismas columnas con el mismo formato.
-- Tablas HEAP: Son tablas temporales que quedan almacenadas en memoria, cuando se crean y que, por tanto, dejan de existir cuando se cierra la sesión. Son muy eficientes cuando se desea acceder de forma muy rápida a los datos que contienen.
+	- Tablas InnoDB: Son tablas de transacción segura, es decir, sobre ellas se pueden usar las sentencias COMMIT o ROLLBACK para confirmar o anular un proceso de transacción que se ha iniciado anteriormente. Admiten control de integridad referencial.
+	- Tablas MyISAM: Son tablas que usan pocos recursos para el almacenamiento. Los procesos son más rápidos. No admiten  transacciones seguras ni integridad referencial.
+	- Tablas MERGE: Son tablas que se definen como resultado de una unión entre dos tablas que tienen las mismas columnas con el mismo formato.
+	- Tablas HEAP: Son tablas temporales que quedan almacenadas en memoria, cuando se crean y que, por tanto, dejan de existir cuando se cierra la sesión. Son muy eficientes cuando se desea acceder de forma muy rápida a los datos que contienen.
 
 Opciones o propiedades de tabla III:
 
