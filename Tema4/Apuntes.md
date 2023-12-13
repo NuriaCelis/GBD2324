@@ -487,9 +487,10 @@ Prevalencia de los operadores lógicos y de comparación:
 
 **Ejemplo:** Obtener la matrícula, marca, modelo  y precio de todos los automóviles de precio de alquiler comprendido entre 80 y 90 €.
 
-```SQL
+```sql
 SELECT matricula,marca,modelo,precio 
-FROM automoviles WHERE precio>=80 AND precio <=90;
+FROM automoviles 
+WHERE precio>=80 AND precio <=90;
 ```
 
 ![Consulta](img/Imagen33.png)
@@ -518,7 +519,8 @@ OR marca='hyundai' OR marca='toyota';
 **Ejemplo:** Obtener todos los datos de los contratos iniciados en el año 2017 y que ya hayan finalizado.
 
 ```sql
-SELECT * FROM contratos 
+SELECT * 
+FROM contratos 
 WHERE ffin IS NOT NULL AND fini LIKE '2017%';
 ```
 
