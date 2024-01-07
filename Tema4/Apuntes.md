@@ -680,8 +680,8 @@ WHERE ffin IS NOT NULL;
 
 ```sql
 SELECT DISTINCT nombre,apellidos
-FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) 
-INNER JOIN clientes ON dnicliente=dni 
+FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula)
+INNER JOIN clientes ON dnicliente=dni
 WHERE marca='seat';
 ```
 
