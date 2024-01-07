@@ -642,6 +642,8 @@ using(numde);
 
 Comprobamos que el número de registros de las consultas es el mismo.
 
+Vamos a hacer pruebas en la **BD alquileres**:
+
 **Ejemplo:** Obtener el número de contrato y la matrícula, marca y modelo de todos los automóviles que están contratados actualmente por algún cliente.
 
 ```sql
@@ -672,6 +674,8 @@ SELECT DISTINCT nombre,apellidos FROM (contratos INNER JOIN automoviles ON c
 ```
 
 ![ejemplo](img/Imagen43.png)
+
+Vamos a hacer pruebas en la **BD NBA**:
 
 **Ejemplo:** En una base de datos nba tenemos una tabla equipos. En la tabla equipos, entre otros datos, se tiene el nombre del equipo y la división en la que participa. Obtener todos los enfrentamientos o partidos posibles entre equipos de la división central sin usar la tabla partidos, buscando los distintos cruces.
 
