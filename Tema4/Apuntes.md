@@ -647,14 +647,20 @@ Vamos a hacer pruebas en la **BD alquileres**:
 **Ejemplo:** Obtener el número de contrato y la matrícula, marca y modelo de todos los automóviles que están contratados actualmente por algún cliente.
 
 ```sql
-SELECT numcontrato,automoviles.matricula,marca,modelo FROM contratos INNER JOIN automoviles ON contratos.matricula=automoviles.matricula WHERE ffin IS NULL;
+SELECT numcontrato,automoviles.matricula,marca,modelo 
+FROM contratos 
+INNER JOIN automoviles ON contratos.matricula=automoviles.matricula 
+WHERE ffin IS NULL;
 ```
 ![ejemplo](img/Imagen39.png)
 
 **Ejemplo:** Obtener el número de contrato y el nombre y apellidos de todos los clientes que tienen actualmente contrato algún automóvil.
 
 ```sql
-SELECT numcontrato,nombre,apellidos FROM clientes INNER JOIN contratos ON dnicliente=dni WHERE ffin IS NULL;
+SELECT numcontrato,nombre,apellidos 
+FROM clientes 
+INNER JOIN contratos ON dnicliente=dni 
+WHERE ffin IS NULL;
 ```
 
 ![ejemplo](img/Imagen40.png)
@@ -662,7 +668,10 @@ SELECT numcontrato,nombre,apellidos FROM clientes INNER JOIN contratos ON dnicli
 **Ejemplo:** De todos los contratos finalizados, obtener la matricula, marca y modelo de cada coche contratado, el nombre y apellidos del cliente que hizo cada contrato y los kilómetros recorridos por el coche en el contrato.
 
 ```sql
-SELECT numcontrato,automoviles.matricula,marca,modelo,nombre,apellidos, kfin-kini FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) INNER JOIN clientes ON dnicliente=dni WHERE ffin IS NOT NULL;
+SELECT numcontrato,automoviles.matricula,marca,modelo,nombre,apellidos, kfin-kini 
+FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) 
+INNER JOIN clientes ON dnicliente=dni 
+WHERE ffin IS NOT NULL;
 ```
 
 ![ejemplo](img/Imagen41.png)
@@ -670,7 +679,10 @@ SELECT numcontrato,automoviles.matricula,marca,modelo,nombre,apellidos, kfin-kin
 **Ejemplo:** Obtener el nombre y apellidos de los clientes que han contratado automóviles de la marca Seat.
 
 ```sql
-SELECT DISTINCT nombre,apellidos FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) INNER JOIN clientes ON dnicliente=dni WHERE marca='seat';
+SELECT DISTINCT nombre,apellidos 
+FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) 
+INNER JOIN clientes ON dnicliente=dni 
+WHERE marca='seat';
 ```
 
 ![ejemplo](img/Imagen43.png)
@@ -680,7 +692,9 @@ Vamos a hacer pruebas en la **BD NBA**:
 **Ejemplo:** En una base de datos nba tenemos una tabla equipos. En la tabla equipos, entre otros datos, se tiene el nombre del equipo y la división en la que participa. Obtener todos los enfrentamientos o partidos posibles entre equipos de la división central sin usar la tabla partidos, buscando los distintos cruces.
 
 ```sql
-SELECT a.nombre AS local,b.nombre AS visitante FROM equipos AS a INNER JOIN equipos AS b ON a.nombre <> b.nombre WHERE a.division='central' AND b.division='central';
+SELECT a.nombre AS local,b.nombre AS visitante 
+FROM equipos AS a INNER JOIN equipos AS b ON a.nombre <> b.nombre 
+WHERE a.division='central' AND b.division='central';
 ```
 
 ![ejemplo](img/Imagen42.png)
@@ -711,7 +725,8 @@ SELECT * FROM automoviles,contratos;
 Vemos que en el resultado vemos múltiples filas para el contrato 1. Vemos que ese contrato corresponde a la matrícula 12434JMY. Pero ese contrato se ha combinado con cada uno de los automóviles, es decir, se ha combinado con automóviles de matrículas distintas a las del contrato. Lo lógico es que, para cada contrato, relacionemos el contrato con los datos del automóvil que corresponda. Eso hay que hacerlo con una condición WHERE.
 
 ```sql
-SELECT * FROM automoviles,contratos WHERE automoviles.matricula = contratos.matricula;
+SELECT * FROM automoviles,contratos 
+WHERE automoviles.matricula = contratos.matricula;
 ```
 
 Aunque ahora veamos en el resultado una fila por cada contrato, realmente se ha creado en memoria una tabla intermedia con el producto cartesiano completo.
@@ -721,7 +736,10 @@ Vamos a ver varios ejemplos en los que se realizan consultas en las que se puede
 **Ejemplo 1:** Obtener la matricula, marca, modelo, fecha inicial y fecha final del contrato número 1 (habrá que establecer la condición WHERE para que el contrato sea el número 1 y para que la matrícula del automóvil coincida con la del contrato).
 
 ```sql
-SELECT contratos.matricula,marca,modelo,fini,ffin FROM automoviles,contratos WHERE numcontrato=1 AND contratos.matricula=automoviles.matricula;
+SELECT contratos.matricula,marca,modelo,fini,ffin 
+FROM automoviles,contratos 
+WHERE numcontrato=1 
+AND contratos.matricula=automoviles.matricula;
 ```
 
 ![Producto Cartesiano](img/Imagen48.png)
@@ -731,13 +749,19 @@ Vemos que en la instrucción se deben usar cualificadores de tabla en columnas q
 Cuando se combinan tablas puede ser útil a veces renombrarlas. Por ejemplo, la instrucción usada en la anterior diapositiva:
 
 ```sql
-SELECT contratos.matricula,marca,modelo,fini,ffin FROM automoviles,contratos WHERE numcontrato=1 AND contratos.matricula=automoviles.matricula;
+SELECT contratos.matricula,marca,modelo,fini,ffin 
+FROM automoviles,contratos 
+WHERE numcontrato=1 
+AND contratos.matricula=automoviles.matricula;
 ```
 
 Sería equivalente a esta que usa renombrado de tablas:
 
 ```sql
-SELECT c.matricula,marca,modelo,fini,ffin FROM automoviles AS a,contratos AS c WHERE numcontrato=1 AND c.matricula=a.matricula;
+SELECT c.matricula,marca,modelo,fini,ffin 
+FROM automoviles AS a,contratos AS c 
+WHERE numcontrato=1 
+AND c.matricula=a.matricula;
 ```
 
 **Ejemplo 2:** Suponiendo que tenemos en una base de datos una tabla con los módulos de un curso y otra tabla con los alumnos del curso, realizar una consulta que obtiene todas las posibles combinaciones de códigos o números de alumnos con todos los códigos de módulos del curso DAM1.
@@ -745,7 +769,9 @@ SELECT c.matricula,marca,modelo,fini,ffin FROM automoviles AS a,contratos AS c W
 ![Producto Cartesiano](img/Imagen49.png)
 
 ```sql
-SELECT numalumn,codmodulo FROM alumnos,modulos ORDER BY codmodulo;
+SELECT numalumn,codmodulo 
+FROM alumnos,modulos 
+ORDER BY codmodulo;
 ```
 
 ![Producto Cartesiano](img/Imagen50.png)
@@ -753,7 +779,10 @@ SELECT numalumn,codmodulo FROM alumnos,modulos ORDER BY codmodulo;
 **Ejemplo 3:** En la base de datos alquileres obtener la marca y modelo (sin repetir) de todos los automóviles contratados alguna vez en diciembre de 2017.
 
 ```sql
-SELECT DISTINCT marca,modelo FROM automoviles,contratos WHERE automoviles.matricula=contratos.matricula AND fini LIKE '2017-12%';
+SELECT DISTINCT marca,modelo 
+FROM automoviles,contratos 
+WHERE automoviles.matricula=contratos.matricula 
+AND fini LIKE '2017-12%';
 ```
 
 ![Producto Cartesiano](img/Imagen51.png)
@@ -761,7 +790,11 @@ SELECT DISTINCT marca,modelo FROM automoviles,contratos WHERE automoviles.matric
 **Ejemplo 4:** Del contrato de alquiler de coches número 10, obtener el cliente que hizo el contrato, la matrícula, marca y modelo del coche y la duración del contrato.
 
 ```sql
-SELECT apellidos, nombre, contratos.matricula, marca, modelo, fini, ffin FROM automoviles, contratos,clientes WHERE automoviles.matricula = contratos.matricula AND contratos.dnicliente=clientes.dni AND numcontrato=10;
+SELECT apellidos, nombre, contratos.matricula, marca, modelo, fini, ffin 
+FROM automoviles, contratos,clientes 
+WHERE automoviles.matricula = contratos.matricula 
+AND contratos.dnicliente=clientes.dni 
+AND numcontrato=10;
 ```
 
 ![Producto Cartesiano](img/Imagen52.png)
@@ -769,7 +802,11 @@ SELECT apellidos, nombre, contratos.matricula, marca, modelo, fini, ffin FROM au
 **Ejemplo 5:** En una base de datos nba tenemos una tabla equipos. En la tabla equipos, entre otros datos, se tiene el nombre del equipo y la división en la que participa. Obtener todos los enfrentamientos o partidos posibles entre equipos de la división central. Habrá que combinar la tabla equipos consigo misma evitando que el equipo local y el visitante sea el mismo.
 
 ```sql
-SELECT a.nombre AS local,b.nombre AS visitante FROM equipos AS a, equipos AS b WHERE a.division='central' AND b.division='central' AND a.nombre <> b.nombre;
+SELECT a.nombre AS local,b.nombre AS visitante 
+FROM equipos AS a, equipos AS b 
+WHERE a.division='central' 
+AND b.division='central' 
+AND a.nombre <> b.nombre;
 ```
 
 ![Producto Cartesiano](img/Imagen53.png)
@@ -816,7 +853,9 @@ La sentencia LEFT JOIN retorna la pareja de todos los valores de la tabla izquie
 **Ejemplo:** Obtener la matrícula, marca y modelo de todos los automóviles junto con los datos de todos los contratos que se han realizado sobre esos automóviles. Para los automóviles nunca contratados se debe obtener también una fila que no está relacionada con ningún contrato.
 
 ```sql
-SELECT automoviles.matricula,marca,modelo,contratos.* FROM automoviles LEFT JOIN contratos USING (matricula);
+SELECT automoviles.matricula,marca,modelo,contratos.* 
+FROM automoviles 
+LEFT JOIN contratos USING (matricula);
 ```
 
 ![Left Join](img/Imagen55.png)
@@ -824,7 +863,9 @@ SELECT automoviles.matricula,marca,modelo,contratos.* FROM automoviles LEFT JOIN
 **Ejemplo:** Obtener los datos de todos los automóviles que nunca han sido contratados.
 
 ```sql
-SELECT automoviles.* FROM automoviles LEFT JOIN contratos USING (matricula) WHERE numcontrato IS NULL;
+SELECT automoviles.* FROM automoviles 
+LEFT JOIN contratos USING (matricula) 
+WHERE numcontrato IS NULL;
 ```
 
 ![Left Join](img/Imagen56.png)
@@ -838,7 +879,8 @@ Esta operación es una imagen refleja de la anterior; el resultado de esta opera
 **Ejemplo:** Obtener el DNI, nombre y apellidos de todos los clientes registrados junto con los datos de los contratos que han realizado. En la hoja de resultados se deben mostrar también los clientes que no han realizado ningún contrato. 
 
 ```sql
-SELECT clientes.dni,nombre,apellidos,contratos.* FROM contratos RIGHT JOIN clientes ON dni=dnicliente;
+SELECT clientes.dni,nombre,apellidos,contratos.* 
+FROM contratos RIGHT JOIN clientes ON dni=dnicliente;
 ```
 
 ![Right Join](img/Imagen58.png)
@@ -846,7 +888,9 @@ SELECT clientes.dni,nombre,apellidos,contratos.* FROM contratos RIGHT JOIN clien
 **Ejemplo:** Obtener los datos de todos los clientes que nunca han hecho contratos.
 
 ```sql
-SELECT clientes.* FROM contratos RIGHT JOIN clientes ON dni=dnicliente WHERE numcontrato IS NULL;
+SELECT clientes.* 
+FROM contratos RIGHT JOIN clientes ON dni=dnicliente 
+WHERE numcontrato IS NULL;
 ```
 
 ![Right Join](img/Imagen59.png)
@@ -860,7 +904,8 @@ Permite combinar filas de dos tablas relacionadas por igualdad entre una clave a
 **Ejemplo:** Obtener los datos de los clientes que han realizado los cinco primeros contratos.
 
 ```SQL
-SELECT clientes.* FROM contratos NATURAL JOIN clientes LIMIT 5;
+SELECT clientes.* FROM contratos 
+NATURAL JOIN clientes LIMIT 5;
 ```
 
 ![Natural Join](img/Imagen60.png)
@@ -920,7 +965,8 @@ Sin DISTINCT saldría cuantos automóviles hay en la tabla AUTOMOVILES (cuantas 
 **Ejemplo:** Obtener la media de kilómetros realizados en los contratos finalizados, el máximo kilometraje realizado y el mínimo.
 
 ```sql
-SELECT avg(kfin-kini), max(kfin-kini),min(kfin-kini) FROM contratos;
+SELECT avg(kfin-kini), max(kfin-kini),min(kfin-kini) 
+FROM contratos;
 ```
 
 ![Resumen](img/Imagen61.png)
@@ -928,7 +974,8 @@ SELECT avg(kfin-kini), max(kfin-kini),min(kfin-kini) FROM contratos;
 **Ejemplo:** Obtener una cadena de caracteres concatenación de los nombres de todos los clientes de Toledo.
 
 ```sql
-SELECT group_concat(nombre) FROM clientes 
+SELECT group_concat(nombre) 
+FROM clientes 
 WHERE localidad='toledo';
 ```
 
@@ -937,7 +984,8 @@ WHERE localidad='toledo';
 **Ejemplo:** Obtener la suma total de kilómetros realizados en contratos finalizados por clientes de Madrid.
 
 ```sql
-SELECT sum(kfin-kini) FROM contratos 
+SELECT sum(kfin-kini) 
+FROM contratos 
 INNER JOIN clientes ON dnicliente=dni 
 WHERE localidad='madrid';
 ```
@@ -949,7 +997,8 @@ Para hacer el **agrupamiento de registros** se utiliza la cláusula GROUP BY, qu
 **Ejemplo:** Obtener la marca y modelo (sin repetir) de todos los automóviles que fueron contratados y cuya fecha de finalización de contrato está dentro del año 2018.
 
 ```sql
-SELECT marca,modelo FROM automoviles 
+SELECT marca,modelo 
+FROM automoviles 
 INNER JOIN contratos ON contratos.matricula = automoviles.matricula 
 WHERE year(ffin)=2018 GROUP BY marca,modelo;
 ```
@@ -959,7 +1008,8 @@ WHERE year(ffin)=2018 GROUP BY marca,modelo;
 **Ejemplo:** Obtener las localidades en las que se tienen clientes.
 
 ```sql
-SELECT localidad FROM clientes GROUP BY localidad;
+SELECT localidad 
+FROM clientes GROUP BY localidad;
 ```
 
 ![Agrupamiento](img/Imagen65.png)
@@ -967,7 +1017,8 @@ SELECT localidad FROM clientes GROUP BY localidad;
 **Ejemplo:** Obtener el nombre y apellidos de los clientes que han realizado contratos a partir del 24 de diciembre de 2017. Los resultados deben estar ordenados ascendentemente por apellidos, nombre.
 
 ```sql
-SELECT nombre,apellidos FROM clientes 
+SELECT nombre,apellidos 
+FROM clientes 
 INNER JOIN contratos ON dnicliente=dni 
 WHERE fini >='2017-12-24' GROUP BY dnicliente ORDER BY apellidos,nombre;
 ```
@@ -981,7 +1032,8 @@ Cuando se realizan agrupamientos en una SELECT, podemos obtener cálculos sobre 
 **Ejemplo:** Obtener cuantos automóviles hay de cada marca usando la función count. Hay que agrupar por marca en una consulta sobre la tabla automoviles.
 
 ```sql
-SELECT marca,count(*) FROM automoviles GROUP BY marca;
+SELECT marca,count(*) 
+FROM automoviles GROUP BY marca;
 ```
 
 ![Agrupamiento](img/Imagen67.png)
@@ -989,7 +1041,8 @@ SELECT marca,count(*) FROM automoviles GROUP BY marca;
 **Ejemplo:** Obtener el nombre y apellidos de los clientes que han realizado contratos a partir del 24 de diciembre de 2017 y cuantos contratos han realizado desde esa fecha. Los resultados deben estar ordenados ascendentemente por apellidos, nombre.
 
 ```sql
-SELECT nombre,apellidos,count(*) FROM clientes 
+SELECT nombre,apellidos,count(*) 
+FROM clientes 
 INNER JOIN contratos ON dnicliente=dni 
 WHERE fini >='2016-12-27' 
 GROUP BY dnicliente 
