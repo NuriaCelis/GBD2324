@@ -679,7 +679,7 @@ WHERE ffin IS NOT NULL;
 **Ejemplo:** Obtener el nombre y apellidos de los clientes que han contratado automóviles de la marca Seat.
 
 ```sql
-SELECT DISTINCT nombre,apellidos 
+SELECT DISTINCT nombre,apellidos
 FROM (contratos INNER JOIN automoviles ON contratos.matricula = automoviles.matricula) 
 INNER JOIN clientes ON dnicliente=dni 
 WHERE marca='seat';
