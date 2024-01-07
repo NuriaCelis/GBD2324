@@ -600,7 +600,23 @@ SELECT   ......  FROM   tabla1  INNER JOIN  tabla2  USING (columna);
 ```
 ![ejemplo](img/Imagen44.png)
 
-Vamos a hacer pruebas en la BD empresa:
+
+En este caso, como los campos por los que vamos a unir las dos tablas se llaman igual, podríamos realizar la consulta de dos maneras distintas:
+- 1º ejemplo:
+  
+```sql
+select * from empleado
+inner join departamento 
+on empleado.IDDepartamento=departamento.IDDepartamento;
+```
+
+- 2º ejemplo:
+```sql
+select * from empleado
+inner join departamento 
+using (iDDepartamento);
+```
+Vamos a hacer pruebas en la **BD empresa**:
 
 ```sql
 select * from empleados 
