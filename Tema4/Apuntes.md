@@ -1400,7 +1400,7 @@ WHERE localidad='SANTANDER'
 Aunque, por lógica, esto cualquiera lo haría así:
 
 ```sql
-UPDATE clientes SET localidad= 'SANTANDER’ WHERE localidad='SANTRDER’;
+UPDATE clientes SET localidad= 'SANTANDER’ WHERE localidad='SANTANDER';
 ```
 
 - locate(subcadena,cadena): Devuelve la posición a partir de la cual se encuentra subcadena en cadena, cero si no la encuentra.
