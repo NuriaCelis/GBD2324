@@ -7,7 +7,6 @@
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-1)
   - [3.- ELIMINACIÓN DE FILAS. LA INSTRUCCIÓN DELETE](#3--eliminación-de-filas-la-instrucción-delete)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-2)
-  - [ACTIVIDAD GRUPAL](#actividad-grupal)
   - [4.- EDICIÓN AVANZADA DE LOS DATOS. INSTRUCCIÓN INSERT.](#4--edición-avanzada-de-los-datos-instrucción-insert)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-3)
   - [5.- ACTUALIZACIÓN AVANZADA DE DATOS. INSTRUCCIÓN UPDATE.](#5--actualización-avanzada-de-datos-instrucción-update)
@@ -517,13 +516,13 @@ WHERE nombre='mariano' AND apellidos='dorado';
 
 💻 Hoja de ejercicios 6. NO LO HACEMOS
 
-## ACTIVIDAD GRUPAL
+<!-- ## ACTIVIDAD GRUPAL
 
 Esta actividad grupal contará un 10% de la nota de la unidad 5.
 
 💻 Crisis en la empresa. Parte 1.
 
-💻 Crisis en la empresa. Parte 2.
+💻 Crisis en la empresa. Parte 2. -->
 
 ## 4.- EDICIÓN AVANZADA DE LOS DATOS. INSTRUCCIÓN INSERT.
 
