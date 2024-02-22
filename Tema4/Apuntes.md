@@ -1497,8 +1497,8 @@ when 2 then 'lunes'
 when 3 then 'martes' 
 when 4 then 'miercoles' 
 when 5 then 'jueves'
- when 6 then 'viernes' 
- when 7 then 'sabado' end;	
+when 6 then 'viernes' 
+when 7 then 'sabado' end;	
 ```
 
 - CASE WHEN [condicion1] THEN resultado1 [WHEN [condicion2] THEN resultado2 ...] [ELSE resultado] END: devuelve el resultado correspondiente a la primera condición que se cumpla.
