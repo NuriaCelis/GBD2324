@@ -422,7 +422,7 @@ Comprueba cual es la regla de integridad referencial en la relación FOREIGN KEY
 
 ```sql
 DELETE FROM clientes 
-WHERE  dni=’08785691K’;
+WHERE  dni='08785691K';
 ```
 
 **Ejemplo 3:** Eliminar todos los contratos realizados hoy.
