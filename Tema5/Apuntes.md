@@ -581,9 +581,9 @@ curdate(),
 (SELECT kilometros FROM automoviles WHERE matricula='2058JGF'));
 ```
 
-**Ejemplo 3:** Añadir un nuevo contrato con fecha de hoy realizado por Anais Rodriguez sobre el automóvil más barato de los que no tienen un contrato sin finalizar actualmente. En kilómetros iniciales pondremos el valor cero.
+**Ejemplo 3:** Añadir un nuevo contrato con fecha de hoy realizado por Anais Rodriguez sobre el automóvil más barato de los que no están alquilados. En kilómetros iniciales pondremos el valor cero.
 
-Hay que tener en cuenta que para sacar el automóvil más barato de los que no están contratados actualmente (según el campo alquilado en automoviles), haríamos:
+Hay que tener en cuenta que para sacar el automóvil más barato de los que no están alquilados actualmente (según el campo alquilado en automoviles), haríamos:
 
 ```sql
 SELECT matricula 
@@ -602,14 +602,18 @@ VALUES (
 curdate(),0);
 ```
 
-**Ejemplo 4:** Añadir un nuevo contrato con fecha de hoy realizado por la cliente de dni ' 11223344M ' sobre los 3 automóviles más baratos. En kilómetros iniciales pondremos el valor cero.
+**Ejemplo 4:** Añadir un nuevo contrato con fecha de hoy realizado por la cliente de dni '11223344M' sobre los 3 automóviles más baratos que estén sin alquilar. En kilómetros iniciales pondremos el valor cero.
 
 Esto no lo podemos hacer con una subconsulta de esta forma (estaríamos tratando de insertar 3 matrículas en un mismo VALUES en un mismo contrato):
 
 ```sql
 INSERT INTO contratos (matricula,dnicliente,fini,kini) 
-VALUES ((SELECT matricula FROM automoviles ORDER BY precio LIMIT 3),
+VALUES ((SELECT matricula FROM automoviles 
+        WHERE matricula NOT IN (SELECT matricula 
+                        FROM contratos WHERE ffin IS NULL) 
+        ORDER BY precio LIMIT 3),
 '11223344M ',curdate(),0);
+-- ERROR: La select esta dando tres registros y solo puede tener un valor en matricula
 ```
  La única forma de hacerlo, con una sola instrucción, es mediante la sintaxis INSERT … SELECT
 
@@ -658,7 +662,7 @@ La SELECT sería así:
 SELECT matricula 
 FROM automoviles 
 WHERE matricula NOT IN (SELECT a.matricula 
-                        FROM (SELECT matricula FROM contratos) AS a 
+                        FROM (SELECT matricula FROM contratos WHERE ffin IS NULL) AS a 
                         ORDER BY a.precio LIMIT 1);
 ```
 
