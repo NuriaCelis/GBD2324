@@ -604,12 +604,12 @@ curdate(),0);
 
 **Ejemplo 4:** Añadir un nuevo contrato con fecha de hoy realizado por la cliente de dni ' 11223344M ' sobre los 3 automóviles más baratos. En kilómetros iniciales pondremos el valor cero.
 
-Esto no lo podemos hacer con una subconsulta de esta forma (estaríamos tratando de insertar 3 matrículas en un mismo VALUES, por tanto, en un mismo contrato:
+Esto no lo podemos hacer con una subconsulta de esta forma (estaríamos tratando de insertar 3 matrículas en un mismo VALUES en un mismo contrato):
 
 ```sql
 INSERT INTO contratos (matricula,dnicliente,fini,kini) 
 VALUES ((SELECT matricula FROM automoviles ORDER BY precio LIMIT 3),
-' 11223344M ',curdate(),0);
+'11223344M ',curdate(),0);
 ```
  La única forma de hacerlo, con una sola instrucción, es mediante la sintaxis INSERT … SELECT
 
