@@ -543,7 +543,7 @@ Hasta ahora, con las dos primeras sintaxis hemos insertado filas en una tabla co
 Una solución, no adecuada para realizar esto, sería mirar los kilómetros que hay en la tabla automóviles para esos automóviles y cargar en INSERT esos valores. Esto no es adecuado ya que cualquier ejercicio, salvo que se diga lo contrario, se debe resolver con una instrucción. No se podrían consultar primero los kilómetros de los automóviles con SELECT. Pero, si se pudiera hacer, la solución sería:
  
 ```sql
-SELECT kilometros FROM automoviles WHERE matricula='5031';
+SELECT kilometros FROM automoviles WHERE matricula='5031JHL';
 -- El resultado es 24796
 SELECT kilometros FROM automoviles WHERE matricula='4738JBJ';
 -- El resultado es 8008
