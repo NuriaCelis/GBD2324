@@ -1155,7 +1155,7 @@ Aquellas que modifican la base de datos mysql:
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 10. 
+💻 Hoja de ejercicios 11. 
 
 ## 8.- CONCURRENCIA
 
@@ -1189,7 +1189,7 @@ Internamente el SGBD proporciona dicho nivel de aislamiento mediante **bloqueos*
 
 ## HOJAS DE EJERCICIOS (DE REPASO)
 
-💻 Hoja de ejercicios 11.
+💻 Hoja de ejercicios 12(es la segunda parte de la 10  ligera).
 
-💻 Hoja de ejercicios 12.
+💻 Hoja de ejercicios 13.
 
