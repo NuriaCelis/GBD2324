@@ -1192,7 +1192,4 @@ Internamente el SGBD proporciona dicho nivel de aislamiento mediante **bloqueos*
 💻 Hoja de ejercicios 12(es la segunda parte de la 10  ligera).
 
 💻 Hoja de ejercicios 13.
-💻 Hoja de ejercicios 12.
-
-💻 Hoja de ejercicios 13.
 
