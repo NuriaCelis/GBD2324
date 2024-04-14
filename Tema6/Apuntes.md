@@ -207,8 +207,7 @@ Cuando se crea un procedimiento, el servidor MySQL nos devolverá indicaciones s
 Sintaxis para crear un procedimiento: 
 
 ```sql
-CREATE PROCEDURE NomProc ([parametro1[,...]])    
-[caracteristica ...] 
+CREATE PROCEDURE NomProc ([parametro1[,...]]) [caracteristica ...] 
 BEGIN   	
 Cuerpo_procedimiento
 END 
@@ -216,11 +215,9 @@ END
 
 Elementos de la sintaxis de la instrucción CREATE PROCEDURE
 
-- Parámetro tiene la sintaxis: [IN|OUT|INOUT] NomParam tipo 
+- Los parámetros pueden ser IN, OUT o INOUT. Se especifica el nombre y el tipo. El tipo puede ser cualquier tipo de MySQL.
 
-- tipo: Cualquier tipo de dato MySQL 
-
-- característica: LANGUAGE SQL   |[NOT] DETERMINISTIC|SQL SECURITY {DEFINER | INVOKER}|COMMENT 'string' 
+- característica: se escribe LANGUAGE SQL seguido de [NOT] DETERMINISTIC o SQL SECURITY {DEFINER | INVOKER} o COMMENT 'string' 
 
 - cuerpo_procedimiento: Instrucciones SQL para realizar la tarea.
 
