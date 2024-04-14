@@ -37,6 +37,6 @@ IES Miguel Herrero.
 
   [Apuntes de la Unidad 7.](Tema7/Apuntes.md)
 
-  <!-- 📻 **8. UNIDAD 8. PROYECTO GRUPAL.**
+  <!--- 📻 **8. UNIDAD 8. PROYECTO GRUPAL.**
 
   [Apuntes de la Unidad 8.](Tema8/Apuntes.md) -->
