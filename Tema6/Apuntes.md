@@ -216,11 +216,11 @@ END
 
 Elementos de la sintaxis de la instrucción CREATE PROCEDURE
 
-- Parámetro tiene la sintaxis: [ IN | OUT | INOUT ] NomParam tipo 
+- Parámetro tiene la sintaxis: [IN|OUT|INOUT] NomParam tipo 
 
 - tipo: Cualquier tipo de dato MySQL 
 
-- característica: LANGUAGE SQL   | [NOT] DETERMINISTIC   | SQL SECURITY {DEFINER | INVOKER}	  | COMMENT 'string' 
+- característica: LANGUAGE SQL   |[NOT] DETERMINISTIC|SQL SECURITY {DEFINER | INVOKER}|COMMENT 'string' 
 
 - cuerpo_procedimiento: Instrucciones SQL para realizar la tarea.
 
