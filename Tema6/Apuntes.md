@@ -357,7 +357,7 @@ Si no se cumple, se realizan las acciones bajo ELSE (si lo hay).
 Sintaxis:
 
 ```sql
-IF condición THEN
+IF condicion THEN
       	instruccion1;
 	instruccion2;
 	…………..
@@ -421,7 +421,7 @@ BEGIN
 	ELSEIF numdia=4 THEN SET nomdia='jueves';    
 	ELSEIF numdia=5 THEN SET nomdia='viernes';   
   ELSE	
-	  SET nomdia='dia incorrecto';   
+	   SET nomdia='dia incorrecto';   
   END IF;
 END
 ```
