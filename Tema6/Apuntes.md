@@ -416,12 +416,12 @@ La cláusula ELSEIF dentro de un IF permite que se evalúe otra condición si no
 CREATE PROCEDURE ejemplo3(IN numdia INT, OUT nomdia VARCHAR(15))
 BEGIN  
   IF numdia=1 THEN set nomdia='lunes';	
-  	ELSEIF numdia=2 THEN SET nomdia='martes';	
-  	ELSEIF numdia=3 THEN SET nomdia='miércoles';    
+  ELSEIF numdia=2 THEN SET nomdia='martes';	
+  ELSEIF numdia=3 THEN SET nomdia='miércoles';    
 	ELSEIF numdia=4 THEN SET nomdia='jueves';    
 	ELSEIF numdia=5 THEN SET nomdia='viernes';   
-   ELSE	
-	SET nomdia='dia incorrecto';   
+  ELSE	
+	  SET nomdia='dia incorrecto';   
   END IF;
 END
 ```
@@ -467,13 +467,13 @@ BEGIN
    SELECT count(*) INTO ncli FROM clientes WHERE nombre=nom AND apellidos=ape;
    SELECT count(*) INTO na FROM automoviles WHERE matricula=mat AND alquilado=false;
    IF na=1 AND ncli=1 THEN
-	SELECT kilometros INTO kil FROM automoviles WHERE matricula=mat;
+	    SELECT kilometros INTO kil FROM automoviles WHERE matricula=mat;
     	SELECT dni INTO d FROM clientes WHERE nombre=nom AND apellidos=ape;
     	INSERT INTO contratos(matricula,dnicliente,fini,kini) VALUES (mat,d,curdate(),kil);
     	UPDATE automoviles SET alquilado=true WHERE matricula=mat;
     	SET hecho=true;
    ELSE
-	SET hecho=false;
+	    SET hecho=false;
    END IF;
 END
 ```
@@ -491,13 +491,13 @@ BEGIN
      SELECT kilometros INTO km FROM automoviles WHERE matricula=mat;
      IF km<5000 THEN
        SET estado='A estrenar';
-	 ELSEIF km<25000 THEN
+	   ELSEIF km<25000 THEN
         SET estado='nuevo';
-	 ELSEIF km<100000 THEN
+	   ELSEIF km<100000 THEN
         SET estado='bastante rodado';
-	 ELSE
+	   ELSE
         SET estado='muy rodado';
-	END IF;
+	   END IF;
   END IF;
 END
 ```
@@ -529,18 +529,17 @@ BEGIN
   SELECT curdate() INTO fecha;
   SET dia=concat(dia,dayofmonth(fecha),' de ');
   CASE month(fecha)
-     WHEN 1 THEN
-        SET mes='enero';
-     WHEN 2 THEN  SET mes='febrero';
-     WHEN 3 THEN  SET mes='marzo';
-     WHEN 4 THEN  SET mes='abril';
-     WHEN 5 THEN  SET mes='mayo';
-     WHEN 6 THEN  SET mes='junio';
-     WHEN 7 THEN  SET mes='julio';
-     WHEN 8 THEN  SET mes='agosto';
-     WHEN 9 THEN  SET mes='septiembre';
-     WHEN 10 THEN  SET mes='octubre';
-     WHEN 11 THEN  SET mes='noviembre';
+     WHEN 1 THEN SET mes='enero';
+     WHEN 2 THEN SET mes='febrero';
+     WHEN 3 THEN SET mes='marzo';
+     WHEN 4 THEN SET mes='abril';
+     WHEN 5 THEN SET mes='mayo';
+     WHEN 6 THEN SET mes='junio';
+     WHEN 7 THEN SET mes='julio';
+     WHEN 8 THEN SET mes='agosto';
+     WHEN 9 THEN SET mes='septiembre';
+     WHEN 10 THEN SET mes='octubre';
+     WHEN 11 THEN SET mes='noviembre';
      ELSE
         SET mes='diciembre';
   END CASE;
