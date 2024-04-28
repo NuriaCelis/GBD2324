@@ -6,7 +6,7 @@
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios)
   - [3.- DESARROLLO DE PROCEDIMIENTOS ALMACENADOS](#3--desarrollo-de-procedimientos-almacenados)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-1)
-    - [Instrucciones de control de flujo.](#instrucciones-de-control-de-flujo)
+  - [3.1.- Instrucciones de control de flujo.](#31--instrucciones-de-control-de-flujo)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-2)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-3)
   - [4.- DESARROLLO DE FUNCIONES](#4--desarrollo-de-funciones)
@@ -339,7 +339,7 @@ END
 
 💻 Hoja de ejercicios 4.
 
-### Instrucciones de control de flujo.
+## 3.1.- Instrucciones de control de flujo.
 
 - De decisión
     - IF
