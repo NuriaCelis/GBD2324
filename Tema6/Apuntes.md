@@ -413,7 +413,7 @@ La cláusula ELSEIF dentro de un IF permite que se evalúe otra condición si no
 **Ejemplo 3**: Realizar un procedimiento que recibe un número de dia de semana laboral y devuelve el nombre de ese día de la semana.
 
 ```sql
-CREATE PROCEDURE ejemplo3(IN numdia INT, OUT nomdia VARCHAR(15))
+CREATE PROCEDURE ejemplo3A(IN numdia INT, OUT nomdia VARCHAR(15))
 BEGIN  
   IF numdia=1 THEN set nomdia='lunes';	
   ELSEIF numdia=2 THEN SET nomdia='martes';	
@@ -429,7 +429,7 @@ END
 Ahora hay que hacerlo sin usar ELSEIF,  hay que usar IF anidados.
 
 ```sql
-CREATE PROCEDURE ejemplo3(IN numdia INT, OUT nomdia VARCHAR(15))
+CREATE PROCEDURE ejemplo3B(IN numdia INT, OUT nomdia VARCHAR(15))
 BEGIN  
 IF numdia=1 THEN 	
 	SET nomdia='lunes';  
