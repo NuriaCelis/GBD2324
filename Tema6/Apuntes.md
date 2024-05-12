@@ -610,46 +610,45 @@ La etiqueta es una marca que sirve para que se pueda saltar al comienzo o al fin
 
 NO ES RECOMENDABLE USAR LOOP. SE DEBEN USAR LOS BUCLES WHILE O REPEAT.
 
-**Ejemplo 8**: Realiza un procedimiento para obtener cuantos divisores tiene un número entero.
+**Ejemplo 8 loop**: Realiza un procedimiento para insertar en una tabla números los números del 1 al 10. El procedimiento se hace en la base de datos prueba. Muestra la tabla al finalizar.
 
 ```sql
-CREATE PROCEDURE ejemplo8 (IN num INT, OUT c INT)
-BEGIN  
-DECLARE d INT;  
-DECLARE n INT;  
-SET c=0;  
-SET n=num; 
- IF n<0 THEN
-    	SET n=-n;  
-END IF;  
-SET d=n;  
-etiq1: LOOP 
-   	IF d=0 THEN
-       		LEAVE etiq1;
-	END IF;   	 
-	IF n%d=0 THEN
-      		 SET c=c+1; 
-  	 END IF;
-   	 SET d=d-1;
-END LOOP etiq1; 
+CREATE PROCEDURE ejemplo8_loop()
+BEGIN
+DECLARE i INT;
+CREATE TABLE numeros(
+num INT);
+SET i=1;
+etiq1: LOOP
+	INSERT INTO numeros VALUES (i);
+    SET i=i+1;
+    IF i>10 THEN
+		leave etiq1;
+	END IF;
+END LOOP etiq1;
+SELECT * FROM numeros;
 END
 ```
 
-**Ejemplo 9**: Realiza un procedimiento que obtiene el primer número de contrato a partir del contrato número 1 que no exista en la tabla contratos.
+**Ejemplo 9 loop**: Realiza un procedimiento que devuelve en una variable de texto los números de contrato pares de la base de datos alquileres.
 
 ```sql
-CREATE PROCEDURE ejemplo9 (OUT n INT)
+CREATE PROCEDURE ejemplo9_loop(OUT texto VARCHAR(200))
 BEGIN  
-DECLARE cont INT;  
-SET n=1;    
-etiq1: LOOP
-    	SELECT count(*) INTO cont FROM contratos WHERE numcontrato=n; 
-   	IF cont=0 THEN
-       		LEAVE etiq1; 
- 	END IF;
-    	SET n=n+1; 
+DECLARE cont INT;
+DECLARE i INT; 
+SET i=1;
+set texto='resultado: ';
+select count(*) into cont from contratos;    
+etiq1: LOOP	
+if i>cont then		
+  LEAVE etiq1;	
+elseif i%2=0 then		
+  set texto=concat(texto,' ', i); 	
+END IF;	
+SET i=i+1; 
 END LOOP etiq1; 
-END 
+END
 ```
 
 **Bucle REPEAT**
@@ -664,52 +663,46 @@ UNTIL condicion
 END REPEAT;
 ```
 
-**Ejemplo 10**: Realiza un procedimiento para obtener cuantos divisores tiene un número entero.
+**Ejemplo 8 repeat**: Realiza un procedimiento para insertar en una tabla números los números del 1 al 10. El procedimiento se hace en la base de datos prueba. Muestra la tabla al finalizar.
+
 
 ```sql
-CREATE PROCEDURE ejemplo10 (IN num INT, OUT c INT)
+CREATE PROCEDURE ejemplo8_repeat()
 BEGIN
-DECLARE d INT;
-DECLARE n INT;
-DECLARE contador INT;  
-	SET contador=0;  
-	SET n=num;  
-	IF n<0 THEN       
-		SET n=-n;  
-	END IF;  
-	SET d=n;  
-	IF d>0 THEN
-		REPEAT  
-	  		IF n%d=0 THEN
-      		 		SET contador=contador+1;					
-        END IF;
-			SET d=d-1;
-		UNTIL d=0 END REPEAT;
-     	END IF;
-  	SET c=contador;
- END
+DECLARE i INT;
+CREATE TABLE numeros(
+num INT);
+SET i=1;
+REPEAT		
+  INSERT INTO numeros VALUES (i);    	
+  SET i=i+1;    
+UNTIL i>10 END REPEAT;
+SELECT * FROM numeros;
+END
+
 ```
 
-**Ejemplo 11**:  Realiza un procedimiento que crea una tabla con los nombre y apellidos de 10 clientes de la tabla clientes elegidos al azar y sin repetir.
+**Ejemplo 9 repeat**:  Realiza un procedimiento que devuelve en una variable de texto los números de contrato pares de la base de datos alquileres.
 
 ```sql
-CREATE PROCEDURE ejemplo11 ()
-BEGIN
-  DECLARE n INT default 0;
-  DECLARE c INT;
-  DECLARE nom VARCHAR(15);
-  DECLARE ape VARCHAR(40);
-  DROP TABLE IF EXISTS temporal;
-  CREATE TABLE temporal ( nombre VARCHAR(25), apellidos VARCHAR(40));
- REPEAT
-	SELECT nombre, apellidos INTO nom,ape FROM clientes ORDER BY rand() LIMIT 1;
-    	SELECT count(*) INTO c FROM temporal WHERE nombre=nom AND apellidos=ape;
-    	IF c=0 THEN
-        		SET n=n+1;
-        		INSERT INTO temporal VALUES (nom,ape);
-    	END IF;
-  UNTIL n=10 END REPEAT;
- END
+CREATE DEFINER=`root`@`%` PROCEDURE `ejemplo9_repeat`(OUT texto VARCHAR(100))
+BEGIN  
+DECLARE ncontratos INT;
+DECLARE i INT; 
+DECLARE aux INT;
+SET i=1;
+SET texto='resultado: ';
+SELECT MAX(numcontrato) INTO ncontratos FROM contratos;    
+REPEAT
+	IF i%2=0 THEN
+		SELECT count(*) INTO aux FROM contratos WHERE numcontrato=i;
+        IF aux=1 THEN
+			set texto=concat(texto,' ', i);
+		END IF;
+ 	END IF;
+	SET i=i+1; 
+UNTIL i>ncontratos END REPEAT; 
+END
 ```
 
 **Bucle WHILE**
@@ -726,47 +719,44 @@ WHILE condicion DO
 END WHILE;
 ```
 
-**Ejemplo 12**: Realiza un procedimiento para obtener cuantos divisores tiene un número entero.
+**Ejemplo 8 while**: Realiza un procedimiento para insertar en una tabla números los números del 1 al 10. El procedimiento se hace en la base de datos prueba. Muestra la tabla al finalizar.
 
 ```sql
-CREATE PROCEDURE ejemplo12 (IN num INT, OUT c INT)
+CREATE DEFINER=`root`@`%` PROCEDURE `ejemplo8_while`()
 BEGIN
-  DECLARE d INT;
-  DECLARE n INT;
-  SET c=0;
-  SET n=num;
-  IF n<0 THEN
-    	SET n=-n;
-  END IF;
-  SET d=n;
-  WHILE d>0 DO
-	IF n%d=0 THEN
-      		 SET c=c+1;
-	END IF;
-	SET d=d-1;
-  END WHILE;
+DECLARE i INT;
+CREATE TABLE numeros(
+num INT);
+SET i=1;
+WHILE i<=10 DO		
+	INSERT INTO numeros VALUES (i);    	
+	SET i=i+1;    
+END WHILE;
+SELECT * FROM numeros;
 END
 ```
 
-**Ejemplo 13**: Realiza un procedimiento que crea una tabla en la base de datos ALQUILERES con los nombres y apellidos de tantas personas como se indique en un parámetro. Los nombres y apellidos se  obtendrán al azar barajando los nombres y apellidos de todos los usuarios de la tabla usuarios de la base de datos CONCURSOMUSICA.
+**Ejemplo 9 while**: Realiza un procedimiento que devuelve en una variable de texto los números de contrato pares de la base de datos alquileres.
 
 ```sql
-CREATE PROCEDURE ejemplo13 (IN numero INT)
-BEGIN
-  DECLARE c INT DEFAULT 0;
-  DECLARE nom VARCHAR(15);
-  DECLARE ape VARCHAR(40);
-  DROP TABLE IF EXISTS temporal;
-  CREATE TABLE temporal (
-	nombre VARCHAR(25),
-    	apellidos VARCHAR(40));
-WHILE c<numero DO
-	SELECT nombre INTO nom from concursomusica.usuarios ORDER BY rand() LIMIT 1;
-    	SELECT apellidos INTO ape FROM concursomusica.usuarios ORDER BY rand() LIMIT 1;
-    	SET c=c+1;
-	INSERT INTO temporal VALUES (nom,ape);
-  END WHILE;
- END
+CREATE DEFINER=`root`@`%` PROCEDURE `ejemplo9_while`(OUT texto VARCHAR(100))
+BEGIN  
+DECLARE ncontratos INT;
+DECLARE i INT; 
+DECLARE aux INT;
+SET i=1;
+SET texto='resultado: ';
+SELECT MAX(numcontrato) INTO ncontratos FROM contratos;    
+WHILE i<=ncontratos DO
+	IF i%2=0 THEN
+		SELECT count(*) INTO aux FROM contratos WHERE numcontrato=i;
+        IF aux=1 THEN
+			set texto=concat(texto,' ', i);
+		END IF;
+ 	END IF;
+	SET i=i+1; 
+END WHILE; 
+END
 ```
 
 ## HOJAS DE EJERCICIOS
